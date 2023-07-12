@@ -34,14 +34,11 @@ const ExerciseDetail = () => {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-    
 
     const fetchExercisesData = async () => {
-
       const res = await axios.get("/api/users/me");
 
       setInfo(res.data.data.email);
-
 
       const exerciseDbUrl = "https://exercisedb.p.rapidapi.com";
       const youtubeSearchUrl =
@@ -66,9 +63,6 @@ const ExerciseDetail = () => {
 
       // const equimentExercisesData = await fetchData(`${exerciseDbUrl}/exercises/equipment/${exerciseDetailData.equipment}`, exerciseOptions);
       // setEquipmentExercises(equimentExercisesData);
-      
-     
-      
     };
 
     fetchExercisesData();
@@ -79,8 +73,6 @@ const ExerciseDetail = () => {
 
   // favourite adding section ------------------ xxxxxxxxxxxxxxxxxxxxxxxxxxxxx---------xxxxxxxxxxxxxxxxxxxx- ----------------xxxxxxxxxx--
   const base = "https://exercisedb.p.rapidapi.com";
-
- 
 
   // useEffect(() => {
   //   const getUserDetails = async () => {
@@ -128,23 +120,23 @@ const ExerciseDetail = () => {
         name={exerciseDetail.name}
       /> */}
       {/* <SimilarExercises targetMuscleExercises={targetMuscleExercises} equipmentExercises={equipmentExercises} /> */}
-      <div className=" mt-16 lg:mt-16 flex justify-center gap-96 ">
-        <Link href={`/video?data=${queryString}`} passHref>
-          <Button
-          
-            color="secondary"
-          >
-            related videos
-          </Button>
-        </Link>
 
-        <Button
-         
-          color="secondary"
-          onClick={onAdd}
-        >
-          add to favourites list
-        </Button>
+      <div className="mt-16 lg:mt-16 mx-8 grid gap-3 md:grid-cols-2">
+        <div className="px-8 md:flex md:justify-center md:items-center md:gap-8">
+          <Link href={`/video?data=${queryString}`} passHref>
+            <Button className="w-full md:w-auto" color="secondary">
+              related videos
+            </Button>
+          </Link>
+
+          <Button
+            className="w-full md:w-auto mt-3 md:mt-0"
+            color="secondary"
+            onClick={onAdd}
+          >
+            add to favourites list
+          </Button>
+        </div>
       </div>
     </div>
   );
