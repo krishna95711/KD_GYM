@@ -1,7 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url(https://fonts.google.com/specimen/Newsreader);
 
+@layer utilities {
+  .shadow-text5 {
+    text-shadow: -15px 5px 20px #ced0d3;
+    }
+  @variants hover {
+    .shadow-h-text5 {
+      text-shadow: -16px 6px 15px #ced0d3;
+    }
+  }
+}
+/* 
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -24,4 +36,4 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-}
+} */
