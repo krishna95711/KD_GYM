@@ -121,7 +121,7 @@ export default function App() {
                 <button onClick={logout}>Log out</button>
               ) : (
                 <button>
-                  <Link href="/login">Sing In</Link>
+                  <Link href="/login">Sign In</Link>
                 </button>
               )}
             </Dropdown.Item>
